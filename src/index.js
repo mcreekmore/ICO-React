@@ -24,10 +24,11 @@ import "assets/vendor/font-awesome/css/font-awesome.min.css";
 import "assets/scss/argon-design-system-react.scss?v1.1.0";
 
 import Index from "views/Index.js";
-import Landing from "views/examples/Landing.js";
-import Login from "views/examples/Login.js";
-import Profile from "views/examples/Profile.js";
-import Register from "views/examples/Register.js";
+import Landing from "views/Landing.js";
+import Login from "views/Login.js";
+import Profile from "views/Profile.js";
+import Register from "views/Register.js";
+import Buy from "views/Buy.js";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -36,6 +37,7 @@ ReactDOM.render(
       <Route path="/index" exact render={(props) => <Index {...props} />} />
       <Route path="/login" exact render={(props) => <Login {...props} />} />
       <Route path="/profile" exact render={(props) => <Profile {...props} />} />
+      <Route path="/buy" exact render={(props) => <Buy {...props} />} />
       <Route
         path="/register"
         exact
