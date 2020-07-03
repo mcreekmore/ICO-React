@@ -18,6 +18,7 @@
 import React from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
+import { Link } from "react-router-dom";
 
 // reactstrap components
 import {
@@ -33,7 +34,7 @@ import {
   InputGroup,
   Container,
   Row,
-  Col
+  Col,
 } from "reactstrap";
 
 // core components
@@ -41,7 +42,7 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
 // index page sections
-import Download from "../IndexSections/Download.js";
+import Download from "./IndexSections/Download.js";
 
 class Landing extends React.Component {
   state = {};
@@ -71,39 +72,56 @@ class Landing extends React.Component {
               </div>
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
+                  <span>&nbsp;&nbsp;</span>
+                  <Row>
+                    <span>&nbsp;&nbsp;</span>
+                  </Row>
                   <Row>
                     <Col lg="6">
-                      <h1 className="display-3 text-white">
-                        A beautiful Design System{" "}
-                        <span>completed with examples</span>
-                      </h1>
+                      <span>&nbsp;&nbsp;</span>
+                      <Row>
+                        <img
+                          alt="..."
+                          className="img-fluid floating"
+                          // style="width:70px;height:70px;"
+                          // style={styles.stretch}
+                          height="70"
+                          width="70"
+                          src={require("assets/img/brand/creekmore-white.png")}
+                        />
+
+                        <h1 className="display-1 text-white">
+                          Move Coin
+                          {/* <span>completed with examples</span> */}
+                        </h1>
+                      </Row>
+                      <p class="h2 text-white">Currency fueling engagement</p>
                       <p className="lead text-white">
-                        The design system comes with four pre-built pages to
-                        help you get started faster. You can change the text and
-                        images and you're good to go.
+                        An intelligent and secure way to provide incentives for
+                        engagement between businesses and their clients.
                       </p>
                       <div className="btn-wrapper">
                         <Button
                           className="btn-icon mb-3 mb-sm-0"
-                          color="info"
-                          href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
+                          color="success"
+                          to="/buy"
+                          tag={Link}
                         >
                           <span className="btn-inner--icon mr-1">
-                            <i className="fa fa-code" />
+                            <i className="ni ni-credit-card" />
                           </span>
-                          <span className="btn-inner--text">Components</span>
+                          <span className="btn-inner--text">Buy</span>
                         </Button>
                         <Button
                           className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
                           color="default"
-                          href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
+                          to="/register"
+                          tag={Link}
                         >
                           <span className="btn-inner--icon mr-1">
-                            <i className="ni ni-cloud-download-95" />
+                            <i className="fa fa-sign-in" />
                           </span>
-                          <span className="btn-inner--text">
-                            Download React
-                          </span>
+                          <span className="btn-inner--text">Register</span>
                         </Button>
                       </div>
                     </Col>
@@ -141,14 +159,14 @@ class Landing extends React.Component {
                             <i className="ni ni-check-bold" />
                           </div>
                           <h6 className="text-primary text-uppercase">
-                            Download Argon
+                            Register for ICO
                           </h6>
                           <p className="description mt-3">
-                            Argon is a great free UI package based on Bootstrap
-                            4 that includes the most important components and
-                            features.
+                            Registration requirements will comply with AML and
+                            KYC standards. Create an account that will be able
+                            to track and purchase your MVE.
                           </p>
-                          <div>
+                          {/* <div>
                             <Badge color="primary" pill className="mr-1">
                               design
                             </Badge>
@@ -158,14 +176,16 @@ class Landing extends React.Component {
                             <Badge color="primary" pill className="mr-1">
                               creative
                             </Badge>
-                          </div>
+                          </div> */}
                           <Button
-                            className="mt-4"
+                            className="btn-icon mb-3 mb-sm-0 ml-1"
                             color="primary"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
+                            href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
                           >
-                            Learn more
+                            <span className="btn-inner--icon mr-1">
+                              <i className="fa fa-sign-in" />
+                            </span>
+                            <span className="btn-inner--text">Register</span>
                           </Button>
                         </CardBody>
                       </Card>
@@ -177,14 +197,18 @@ class Landing extends React.Component {
                             <i className="ni ni-istanbul" />
                           </div>
                           <h6 className="text-success text-uppercase">
-                            Build Something
+                            Buy Move (MVE)
                           </h6>
-                          <p className="description mt-3">
-                            Argon is a great free UI package based on Bootstrap
-                            4 that includes the most important components and
-                            features.
+                          <p class="description mt-3">
+                            If you are already whitelisted, continue to our
+                            purchasing page.
                           </p>
-                          <div>
+                          <p class="description">
+                            Ratio: 1000 MVE to 1 ETH
+                            <br />
+                            Cap: 100 ETH
+                          </p>
+                          {/* <div>
                             <Badge color="success" pill className="mr-1">
                               business
                             </Badge>
@@ -194,14 +218,16 @@ class Landing extends React.Component {
                             <Badge color="success" pill className="mr-1">
                               success
                             </Badge>
-                          </div>
+                          </div> */}
                           <Button
-                            className="mt-4"
+                            className="btn-icon mb-3 mb-sm-0"
                             color="success"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
+                            href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
                           >
-                            Learn more
+                            <span className="btn-inner--icon mr-1">
+                              <i className="ni ni-credit-card" />
+                            </span>
+                            <span className="btn-inner--text">Buy</span>
                           </Button>
                         </CardBody>
                       </Card>
@@ -213,14 +239,13 @@ class Landing extends React.Component {
                             <i className="ni ni-planet" />
                           </div>
                           <h6 className="text-warning text-uppercase">
-                            Prepare Launch
+                            Follow Launch
                           </h6>
                           <p className="description mt-3">
-                            Argon is a great free UI package based on Bootstrap
-                            4 that includes the most important components and
-                            features.
+                            Follow the team and their development of Move Coin
+                            and its parent cross-platform app Moves.
                           </p>
-                          <div>
+                          {/* <div>
                             <Badge color="warning" pill className="mr-1">
                               marketing
                             </Badge>
@@ -230,14 +255,16 @@ class Landing extends React.Component {
                             <Badge color="warning" pill className="mr-1">
                               launch
                             </Badge>
-                          </div>
+                          </div> */}
                           <Button
-                            className="mt-4"
+                            className="btn-icon mb-3 mb-sm-0"
                             color="warning"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
+                            href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
                           >
-                            Learn more
+                            <span className="btn-inner--icon mr-1">
+                              <i className="ni ni-planet" />
+                            </span>
+                            <span className="btn-inner--text">Learn More</span>
                           </Button>
                         </CardBody>
                       </Card>
@@ -260,13 +287,13 @@ class Landing extends React.Component {
                 <Col className="order-md-1" md="6">
                   <div className="pr-md-5">
                     <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
-                      <i className="ni ni-settings-gear-65" />
+                      <i className="ni ni-bulb-61" />
                     </div>
-                    <h3>Awesome features</h3>
+                    <h3>Engagement Focused</h3>
                     <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
+                      Move Coin is built for small and large business alike.
+                      It's easy to get started advertising and incentivising
+                      interactions and engagement with Move on our platform.
                     </p>
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
@@ -276,12 +303,12 @@ class Landing extends React.Component {
                               className="badge-circle mr-3"
                               color="success"
                             >
-                              <i className="ni ni-settings-gear-65" />
+                              <i className="ni ni-spaceship" />
                             </Badge>
                           </div>
                           <div>
                             <h6 className="mb-0">
-                              Carefully crafted components
+                              Quick transactions and instant feedback
                             </h6>
                           </div>
                         </div>
@@ -293,11 +320,11 @@ class Landing extends React.Component {
                               className="badge-circle mr-3"
                               color="success"
                             >
-                              <i className="ni ni-html5" />
+                              <i className="ni ni-chart-bar-32" />
                             </Badge>
                           </div>
                           <div>
-                            <h6 className="mb-0">Amazing page examples</h6>
+                            <h6 className="mb-0">Real-time analytic</h6>
                           </div>
                         </div>
                       </li>
@@ -312,9 +339,7 @@ class Landing extends React.Component {
                             </Badge>
                           </div>
                           <div>
-                            <h6 className="mb-0">
-                              Super friendly support team
-                            </h6>
+                            <h6 className="mb-0">B2C and C2B satisfaction</h6>
                           </div>
                         </div>
                       </li>
@@ -352,12 +377,11 @@ class Landing extends React.Component {
                         />
                       </svg>
                       <h4 className="display-3 font-weight-bold text-white">
-                        Design System
+                        You've seen it before
                       </h4>
                       <p className="lead text-italic text-white">
-                        The Arctic Ocean freezes every winter and much of the
-                        sea-ice then thaws every summer, and that process will
-                        continue whatever happens.
+                        Outdated websites and hours of operation, or a new
+                        weekly special that no one knows about.
                       </p>
                     </blockquote>
                   </Card>
@@ -367,28 +391,27 @@ class Landing extends React.Component {
                     <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                       <i className="ni ni-settings" />
                     </div>
-                    <h3>Our customers</h3>
-                    <p className="lead">
-                      Don't let your uses guess by attaching tooltips and
-                      popoves to any element. Just make sure you enable them
-                      first via JavaScript.
+                    <h3>Moves Incentives</h3>
+                    <p class="lead">
+                      Don't leave customers in the dark by not keeping up with
+                      your businesses public information.
                     </p>
                     <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
+                      Moves provides an incentive feedback loop for others to
+                      work together in a crowd-sourced environment. Let anyone
+                      can now populate it with incentives
                     </p>
                     <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
+                      {/* The kit comes with three pre-built pages to help you get started
+                faster. You can change the text and images and you're good to
+                go. */}
                     </p>
                     <a
                       className="font-weight-bold text-warning mt-5"
                       href="#pablo"
-                      onClick={e => e.preventDefault()}
+                      onClick={(e) => e.preventDefault()}
                     >
-                      A beautiful UI Kit for impactful websites
+                      Learn more
                     </a>
                   </div>
                 </Col>
@@ -415,11 +438,12 @@ class Landing extends React.Component {
                       </div>
                     </div>
                     <div className="pl-4">
-                      <h4 className="display-3 text-white">Modern Interface</h4>
+                      <h4 className="display-3 text-white">
+                        Small Business Optimized
+                      </h4>
                       <p className="text-white">
-                        The Arctic Ocean freezes every winter and much of the
-                        sea-ice then thaws every summer, and that process will
-                        continue whatever.
+                        Moves is built to make it easy for small business to hit
+                        the ground running and see returns fast.
                       </p>
                     </div>
                   </div>
@@ -432,18 +456,16 @@ class Landing extends React.Component {
                           </div>
                         </div>
                         <div className="pl-4">
-                          <h5 className="title text-success">
-                            Awesome Support
-                          </h5>
+                          <h5 className="title text-success">New Technology</h5>
                           <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
+                            Incorporate cutting-edge technology in your
+                            businesses portfolio. Engagement is right around the
+                            corner.
                           </p>
                           <a
                             className="text-success"
                             href="#pablo"
-                            onClick={e => e.preventDefault()}
+                            onClick={(e) => e.preventDefault()}
                           >
                             Learn more
                           </a>
@@ -461,17 +483,16 @@ class Landing extends React.Component {
                         </div>
                         <div className="pl-4">
                           <h5 className="title text-warning">
-                            Modular Components
+                            Incentivise how you want
                           </h5>
                           <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
+                            Moves is made to provide nearly every business the
+                            tools to create and use incentives how they want.
                           </p>
                           <a
                             className="text-warning"
                             href="#pablo"
-                            onClick={e => e.preventDefault()}
+                            onClick={(e) => e.preventDefault()}
                           >
                             Learn more
                           </a>
@@ -503,189 +524,64 @@ class Landing extends React.Component {
             <Container>
               <Row className="justify-content-center text-center mb-lg">
                 <Col lg="8">
-                  <h2 className="display-3">The amazing Team</h2>
-                  <p className="lead text-muted">
+                  <h2 className="display-3">The Creator</h2>
+                  {/* <p className="lead text-muted">
                     According to the National Oceanic and Atmospheric
                     Administration, Ted, Scambos, NSIDClead scentist, puts the
                     potentially record maximum.
-                  </p>
+                  </p> */}
                 </Col>
               </Row>
-              <Row>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
-                  <div className="px-4">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("assets/img/theme/team-1-800x800.jpg")}
-                      style={{ width: "200px" }}
-                    />
-                    <div className="pt-4 text-center">
-                      <h5 className="title">
-                        <span className="d-block mb-1">Ryan Tompson</span>
-                        <small className="h6 text-muted">Web Developer</small>
-                      </h5>
-                      <div className="mt-3">
-                        <Button
-                          className="btn-icon-only rounded-circle"
-                          color="warning"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="warning"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="warning"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
-                    </div>
+              {/* <Row> */}
+              {/* <Col className="mb-5 mb-lg-0" lg="3" md="6"> */}
+              <div className="px-4">
+                <img
+                  alt="..."
+                  className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                  src={require("assets/img/faces/matt.jpg")}
+                  style={{ width: "200px" }}
+                />
+                <div className="pt-4 text-center">
+                  <h5 className="title">
+                    <span className="d-block mb-1">Matt Creekmore</span>
+                    <small className="h6 text-muted">Founder and CEO</small>
+                  </h5>
+                  <div className="mt-3">
+                    <Button
+                      className="btn-icon-only rounded-circle"
+                      color="secondary"
+                      href="https://www.instagram.com/matthewcreekmore/"
+                      target="_blank"
+                      // onClick={(e) => e.preventDefault()}
+                    >
+                      <i className="fa fa-instagram" />
+                    </Button>
+                    <Button
+                      className="btn-icon-only rounded-circle ml-1"
+                      color="secondary"
+                      href="https://www.linkedin.com/in/creekmore/"
+                      target="_blank"
+                      // onClick={(e) => e.preventDefault()}
+                    >
+                      <i className="fa fa-linkedin" />
+                    </Button>
+                    <Button
+                      className="btn-icon-only rounded-circle ml-1"
+                      color="secondary"
+                      href="https://github.com/mcreekmore"
+                      target="_blank"
+                      // onClick={(e) => e.preventDefault()}
+                    >
+                      <i className="fa fa-github" />
+                    </Button>
                   </div>
-                </Col>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
-                  <div className="px-4">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("assets/img/theme/team-2-800x800.jpg")}
-                      style={{ width: "200px" }}
-                    />
-                    <div className="pt-4 text-center">
-                      <h5 className="title">
-                        <span className="d-block mb-1">Romina Hadid</span>
-                        <small className="h6 text-muted">
-                          Marketing Strategist
-                        </small>
-                      </h5>
-                      <div className="mt-3">
-                        <Button
-                          className="btn-icon-only rounded-circle"
-                          color="primary"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="primary"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="primary"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
-                  <div className="px-4">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("assets/img/theme/team-3-800x800.jpg")}
-                      style={{ width: "200px" }}
-                    />
-                    <div className="pt-4 text-center">
-                      <h5 className="title">
-                        <span className="d-block mb-1">Alexander Smith</span>
-                        <small className="h6 text-muted">UI/UX Designer</small>
-                      </h5>
-                      <div className="mt-3">
-                        <Button
-                          className="btn-icon-only rounded-circle"
-                          color="info"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="info"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="info"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
-                  <div className="px-4">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("assets/img/theme/team-4-800x800.jpg")}
-                      style={{ width: "200px" }}
-                    />
-                    <div className="pt-4 text-center">
-                      <h5 className="title">
-                        <span className="d-block mb-1">John Doe</span>
-                        <small className="h6 text-muted">Founder and CEO</small>
-                      </h5>
-                      <div className="mt-3">
-                        <Button
-                          className="btn-icon-only rounded-circle"
-                          color="success"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="success"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="success"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-              </Row>
+                </div>
+              </div>
+              {/* </Col> */}
+              {/* </Row> */}
             </Container>
           </section>
-          <section className="section section-lg pt-0">
+          {/* <section className="section section-lg pt-0">
             <Container>
               <Card className="bg-gradient-warning shadow-lg border-0">
                 <div className="p-5">
@@ -715,29 +611,31 @@ class Landing extends React.Component {
                 </div>
               </Card>
             </Container>
-          </section>
+          </section> */}
           <section className="section section-lg bg-gradient-default">
             <Container className="pt-lg pb-300">
               <Row className="text-center justify-content-center">
                 <Col lg="10">
-                  <h2 className="display-3 text-white">Build something</h2>
-                  <p className="lead text-white">
+                  <h2 className="display-3 text-white">
+                    Build something stronger
+                  </h2>
+                  {/* <p className="lead text-white">
                     According to the National Oceanic and Atmospheric
                     Administration, Ted, Scambos, NSIDClead scentist, puts the
                     potentially record low maximum sea ice extent tihs year down
                     to low ice.
-                  </p>
+                  </p> */}
                 </Col>
               </Row>
               <Row className="row-grid mt-5">
                 <Col lg="4">
                   <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                    <i className="ni ni-settings text-primary" />
+                    <i className="ni ni-mobile-button" />
                   </div>
-                  <h5 className="text-white mt-3">Building tools</h5>
+                  <h5 className="text-white mt-3">Share your business</h5>
                   <p className="text-white mt-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Once you're on our platform, it's easier than ever to be
+                    discovered with Moves.
                   </p>
                 </Col>
                 <Col lg="4">
@@ -746,8 +644,8 @@ class Landing extends React.Component {
                   </div>
                   <h5 className="text-white mt-3">Grow your market</h5>
                   <p className="text-white mt-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Let your market find you with developing technologies. You
+                    set the incentives and let the come to you.
                   </p>
                 </Col>
                 <Col lg="4">
@@ -756,8 +654,8 @@ class Landing extends React.Component {
                   </div>
                   <h5 className="text-white mt-3">Launch time</h5>
                   <p className="text-white mt-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Advertisement, Distribution, Engagement. All wrapped in one.
+                    Find out what Moves can do for your business.
                   </p>
                 </Col>
               </Row>
@@ -785,13 +683,15 @@ class Landing extends React.Component {
                 <Col lg="8">
                   <Card className="bg-gradient-secondary shadow">
                     <CardBody className="p-lg-5">
-                      <h4 className="mb-1">Want to work with us?</h4>
+                      <h4 className="mb-1">
+                        Got something to ask or some suggestions?
+                      </h4>
                       <p className="mt-0">
-                        Your project is very important to us.
+                        Your Feeback is very important to us.
                       </p>
                       <FormGroup
                         className={classnames("mt-5", {
-                          focused: this.state.nameFocused
+                          focused: this.state.nameFocused,
                         })}
                       >
                         <InputGroup className="input-group-alternative">
@@ -803,14 +703,18 @@ class Landing extends React.Component {
                           <Input
                             placeholder="Your name"
                             type="text"
-                            onFocus={e => this.setState({ nameFocused: true })}
-                            onBlur={e => this.setState({ nameFocused: false })}
+                            onFocus={(e) =>
+                              this.setState({ nameFocused: true })
+                            }
+                            onBlur={(e) =>
+                              this.setState({ nameFocused: false })
+                            }
                           />
                         </InputGroup>
                       </FormGroup>
                       <FormGroup
                         className={classnames({
-                          focused: this.state.emailFocused
+                          focused: this.state.emailFocused,
                         })}
                       >
                         <InputGroup className="input-group-alternative">
@@ -822,8 +726,12 @@ class Landing extends React.Component {
                           <Input
                             placeholder="Email address"
                             type="email"
-                            onFocus={e => this.setState({ emailFocused: true })}
-                            onBlur={e => this.setState({ emailFocused: false })}
+                            onFocus={(e) =>
+                              this.setState({ emailFocused: true })
+                            }
+                            onBlur={(e) =>
+                              this.setState({ emailFocused: false })
+                            }
                           />
                         </InputGroup>
                       </FormGroup>
@@ -854,7 +762,7 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
-          <Download />
+          {/* <Download /> */}
         </main>
         <CardsFooter />
       </>
