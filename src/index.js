@@ -23,6 +23,9 @@ import "assets/vendor/nucleo/css/nucleo.css";
 import "assets/vendor/font-awesome/css/font-awesome.min.css";
 import "assets/scss/argon-design-system-react.scss?v1.1.0";
 
+import PublicRoute from "./components/PublicRoute";
+import PrivateRoute from "./components/PrivateRoute";
+
 import Index from "views/Index.js";
 import Landing from "views/Landing.js";
 import Login from "views/Login.js";
@@ -33,13 +36,33 @@ import Buy from "views/Buy.js";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/" exact render={(props) => <Landing {...props} />} />
-      <Route path="/index" exact render={(props) => <Index {...props} />} />
-      <Route path="/login" exact render={(props) => <Login {...props} />} />
-      <Route path="/profile" exact render={(props) => <Profile {...props} />} />
-      <Route path="/buy" exact render={(props) => <Buy {...props} />} />
-      <Route
+      <PublicRoute
+        path="/"
+        restricted={false}
+        exact
+        render={(props) => <Landing {...props} />}
+      />
+      <PublicRoute
+        path="/index"
+        restricted={false}
+        exact
+        render={(props) => <Index {...props} />}
+      />
+      <PublicRoute
+        path="/login"
+        restricted={true}
+        exact
+        render={(props) => <Login {...props} />}
+      />
+      <PrivateRoute
+        path="/profile"
+        exact
+        render={(props) => <Profile {...props} />}
+      />
+      <PrivateRoute path="/buy" exact render={(props) => <Buy {...props} />} />
+      <PublicRoute
         path="/register"
+        restricted={true}
         exact
         render={(props) => <Register {...props} />}
       />

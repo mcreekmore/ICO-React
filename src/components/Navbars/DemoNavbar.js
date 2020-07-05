@@ -176,6 +176,7 @@ class DemoNavbar extends React.Component {
                   className="navbar-nav-hover align-items-lg-center ml-lg-auto"
                   navbar
                 >
+                  {" "}
                   <UncontrolledDropdown nav>
                     <DropdownToggle nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
@@ -191,7 +192,7 @@ class DemoNavbar extends React.Component {
                       <DropdownItem to="/login" tag={Link}>
                         Login
                       </DropdownItem>
-                      <DropdownItem to="/register-page" tag={Link}>
+                      <DropdownItem to="/register" tag={Link}>
                         Register
                       </DropdownItem>
                     </DropdownMenu>

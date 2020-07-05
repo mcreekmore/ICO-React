@@ -2,7 +2,7 @@ import React from "react";
 import Web3 from "web3";
 // nodejs library that concatenates classes
 // import classnames from "classnames";
-import { ABI, address } from "../moveCrowdsale";
+import { ABI, address } from "../config/moveCrowdsale";
 
 // reactstrap components
 import {
