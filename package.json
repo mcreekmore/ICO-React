@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/creativetimofficial/argon-design-system-react/issues"
   },
-  "homepage": "https://demos.creative-tim.com/argon-design-system-react/",
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "dev": "react-scripts start",
@@ -72,6 +72,7 @@
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
     "jquery": "3.4.1",
-    "typescript": "3.7.5"
+    "typescript": "3.7.5
+
   }
 }
