@@ -95,7 +95,9 @@ class Landing extends React.Component {
                           {/* <span>completed with examples</span> */}
                         </h1>
                       </Row>
-                      <p class="h2 text-white">Currency fueling engagement</p>
+                      <p className="h2 text-white">
+                        Currency fueling engagement
+                      </p>
                       <p className="lead text-white">
                         An intelligent and secure way to provide incentives for
                         engagement between businesses and their clients.
@@ -199,11 +201,11 @@ class Landing extends React.Component {
                           <h6 className="text-success text-uppercase">
                             Buy Move (MVE)
                           </h6>
-                          <p class="description mt-3">
+                          <p className="description mt-3">
                             If you are already whitelisted, continue to our
                             purchasing page.
                           </p>
-                          <p class="description">
+                          <p className="description">
                             Ratio: 1000 MVE to 1 ETH
                             <br />
                             Cap: 100 ETH
@@ -392,7 +394,7 @@ class Landing extends React.Component {
                       <i className="ni ni-settings" />
                     </div>
                     <h3>Moves Incentives</h3>
-                    <p class="lead">
+                    <p className="lead">
                       Don't leave customers in the dark by not keeping up with
                       your businesses public information.
                     </p>

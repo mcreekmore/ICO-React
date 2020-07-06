@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-// import { isLogin } from "../utils";
+import isLogin from "../utils/isLogin";
 
 function PrivateRoute({ render: Component, ...rest }) {
   return (
@@ -8,9 +8,10 @@ function PrivateRoute({ render: Component, ...rest }) {
     // Otherwise, redirect the user to /signin page
     <Route
       {...rest}
-      render={(props) =>
-        // isLogin() ? <Component {...props} /> : <Redirect to="/login" />
-        false ? <Component {...props} /> : <Redirect to="/login" />
+      render={
+        (props) =>
+          isLogin() ? <Component {...props} /> : <Redirect to="/login" />
+        // false ? <Component {...props} /> : <Redirect to="/login" />
       }
     />
   );

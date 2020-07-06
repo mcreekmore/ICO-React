@@ -19,12 +19,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 // JavaScript plugin that hides or shows a component based on your scroll
 import Headroom from "headroom.js";
+import isLogin from "../../utils/isLogin";
+import NavBarDropdown from "./NavBarDropdown";
 // reactstrap components
 import {
   // Button,
   UncontrolledCollapse,
   DropdownMenu,
-  DropdownItem,
+  // DropdownItem,
   DropdownToggle,
   UncontrolledDropdown,
   Media,
@@ -44,10 +46,12 @@ class DemoNavbar extends React.Component {
     let headroom = new Headroom(document.getElementById("navbar-main"));
     // initialise
     headroom.init();
+    // console.log(this.state.isLoggedIn);
   }
   state = {
     collapseClasses: "",
     collapseOpen: false,
+    isLoggedIn: isLogin(),
   };
 
   onExiting = () => {
@@ -182,7 +186,11 @@ class DemoNavbar extends React.Component {
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">Navigation</span>
                     </DropdownToggle>
-                    <DropdownMenu>
+
+                    {/* dynamic navigations */}
+                    <NavBarDropdown isLoggedIn={this.state.isLoggedIn} />
+
+                    {/* <DropdownMenu>
                       <DropdownItem to="/landing" tag={Link}>
                         Landing
                       </DropdownItem>
@@ -195,7 +203,7 @@ class DemoNavbar extends React.Component {
                       <DropdownItem to="/register" tag={Link}>
                         Register
                       </DropdownItem>
-                    </DropdownMenu>
+                    </DropdownMenu> */}
                   </UncontrolledDropdown>
                   {/* <NavItem>
                     <NavLink

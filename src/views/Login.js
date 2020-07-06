@@ -40,6 +40,7 @@ import {
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
 import ErrorAlert from "components/ErrorAlert.js";
+import LoginButton from "../components/LoginButton";
 
 class Login extends React.Component {
   componentDidMount() {
@@ -58,6 +59,7 @@ class Login extends React.Component {
       showAlert: false,
     };
     this.handleSubmit.bind(this);
+    this.toggleError = this.toggleError.bind(this);
   }
 
   // AlertDialogue = () => {
@@ -89,6 +91,7 @@ class Login extends React.Component {
         if (res.status === 200) {
           // store the user in localStorage
           localStorage.setItem("user", JSON.stringify(res.data)); // when retrieving, JSON.parse(res)
+          // const history = useHistory();
         } else {
           console.log("runs");
           this.state.showAlert = true;
@@ -100,6 +103,10 @@ class Login extends React.Component {
         this.setState({ showAlert: true });
       });
   };
+
+  toggleError() {
+    this.setState({ showAlert: !this.state.showAlert });
+  }
 
   render() {
     return (
@@ -192,7 +199,7 @@ class Login extends React.Component {
                               type="password"
                               autoComplete="off"
                               onChange={({ target }) =>
-                                this.setState({ email: target.value })
+                                this.setState({ password: target.value })
                               }
                             />
                           </InputGroup>
@@ -211,17 +218,24 @@ class Login extends React.Component {
                           </label>
                         </div>
                         <div className="text-center">
-                          <Button
+                          {/* <Button
                             className="my-4"
                             color="primary"
                             type="submit"
                             onClick={this.handleSubmit.bind(this)}
                           >
                             Sign in
-                          </Button>
+                          </Button> */}
+                          <LoginButton
+                            email={this.state.email}
+                            password={this.state.password}
+                          />
                         </div>
                       </Form>
-                      <ErrorAlert isOpen={this.state.showAlert} />
+                      <ErrorAlert
+                        isOpen={this.state.showAlert}
+                        toggleError={this.toggleError}
+                      />
                     </CardBody>
                   </Card>
                   <Row className="mt-3">
