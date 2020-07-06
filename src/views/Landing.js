@@ -205,22 +205,25 @@ class Landing extends React.Component {
                             If you are already whitelisted, continue to our
                             purchasing page.
                           </p>
-                          <p className="description">
+                          {/* <p className="description">
                             Ratio: 1000 MVE to 1 ETH
                             <br />
                             Cap: 100 ETH
-                          </p>
-                          {/* <div>
+                          </p> */}
+                          <div>
                             <Badge color="success" pill className="mr-1">
-                              business
+                              Ratio: 1000 MVE to 1 ETH
                             </Badge>
                             <Badge color="success" pill className="mr-1">
-                              vision
+                              Cap: 100 ETH
                             </Badge>
-                            <Badge color="success" pill className="mr-1">
+                            {/* <Badge color="success" pill className="mr-1">
                               success
-                            </Badge>
-                          </div> */}
+                            </Badge> */}
+                          </div>
+                          <Row>
+                            <span>&nbsp;&nbsp;</span>
+                          </Row>
                           <Button
                             className="btn-icon mb-3 mb-sm-0"
                             color="success"
