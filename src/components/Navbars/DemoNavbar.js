@@ -120,7 +120,8 @@ class DemoNavbar extends React.Component {
                       <div className="dropdown-menu-inner">
                         <Media
                           className="d-flex align-items-center"
-                          href="/register"
+                          to="/register"
+                          tag={Link}
                         >
                           <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
                             <i className="fa fa-sign-in" />
@@ -137,7 +138,8 @@ class DemoNavbar extends React.Component {
                         </Media>
                         <Media
                           className="d-flex align-items-center"
-                          href="/buy"
+                          to="/buy"
+                          tag={Link}
                         >
                           <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
                             <i className="ni ni-spaceship" />
