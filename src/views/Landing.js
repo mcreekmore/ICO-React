@@ -182,7 +182,7 @@ class Landing extends React.Component {
                           <Button
                             className="btn-icon mb-3 mb-sm-0 ml-1"
                             color="primary"
-                            href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
+                            href="/register"
                           >
                             <span className="btn-inner--icon mr-1">
                               <i className="fa fa-sign-in" />
@@ -224,7 +224,7 @@ class Landing extends React.Component {
                           <Button
                             className="btn-icon mb-3 mb-sm-0"
                             color="success"
-                            href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
+                            href="/buy"
                           >
                             <span className="btn-inner--icon mr-1">
                               <i className="ni ni-credit-card" />
@@ -261,7 +261,7 @@ class Landing extends React.Component {
                           <Button
                             className="btn-icon mb-3 mb-sm-0"
                             color="warning"
-                            href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
+                            href="/learn-more"
                           >
                             <span className="btn-inner--icon mr-1">
                               <i className="ni ni-planet" />
@@ -410,7 +410,7 @@ class Landing extends React.Component {
                     </p>
                     <a
                       className="font-weight-bold text-warning mt-5"
-                      href="#pablo"
+                      href="/learn-more"
                       onClick={(e) => e.preventDefault()}
                     >
                       Learn more
@@ -466,7 +466,7 @@ class Landing extends React.Component {
                           </p>
                           <a
                             className="text-success"
-                            href="#pablo"
+                            href="/learn-more"
                             onClick={(e) => e.preventDefault()}
                           >
                             Learn more
@@ -493,7 +493,7 @@ class Landing extends React.Component {
                           </p>
                           <a
                             className="text-warning"
-                            href="#pablo"
+                            href="/learn-more"
                             onClick={(e) => e.preventDefault()}
                           >
                             Learn more
