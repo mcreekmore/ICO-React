@@ -18,7 +18,9 @@ export default function NavBarDropdown(props) {
         <DropdownItem to="/profile" tag={Link}>
           Profile
         </DropdownItem>
-        <DropdownItem onClick={Logout}>Sign Out</DropdownItem>
+        <DropdownItem onClick={Logout} to="/" tag={Link}>
+          Sign Out
+        </DropdownItem>
       </DropdownMenu>
     );
   } else {
