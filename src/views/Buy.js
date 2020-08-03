@@ -149,7 +149,7 @@ class Buy extends React.Component {
         <main ref="main">
           <div className="position-relative">
             {/* shape Hero */}
-            <section className="section section-lg section-shaped pb-250">
+            <section className="section section-lg section-shaped pb-250 pt-200">
               <div className="shape shape-style-1 shape-default">
                 <span />
                 <span />
@@ -164,15 +164,6 @@ class Buy extends React.Component {
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                   <Col lg="6">
-                    <Row>
-                      <span>&nbsp;&nbsp;</span>
-                    </Row>
-                    <Row>
-                      <span>&nbsp;&nbsp;</span>
-                    </Row>
-                    <Row>
-                      <span>&nbsp;&nbsp;</span>
-                    </Row>
                     <Row>
                       <img
                         alt="..."

@@ -16,7 +16,7 @@
 
 */
 import React from "react";
-import axios from "axios";
+// import axios from "axios";
 
 // reactstrap components
 import {
@@ -57,55 +57,8 @@ class Login extends React.Component {
       password: null,
       user: null,
       showAlert: false,
+      checked: false,
     };
-    this.handleSubmit.bind(this);
-    this.toggleError = this.toggleError.bind(this);
-  }
-
-  // AlertDialogue = () => {
-  //   // const [showResults, setShowResults] = React.useState(false);
-  //   // const onClick = () => setShowResults(true);
-  //   return (
-  //     <Alert color="danger">
-  //       <strong>Login Failed: </strong> Email or password is incorrect
-  //     </Alert>
-  //   );
-  // };
-
-  handleSubmit = async (e) => {
-    e.preventDefault();
-    const user = { email: this.state.email, password: this.state.password };
-    console.log(user);
-    // send the email and password to the server
-    // const response = await axios.post("https://creekmore.io/api/auth", user);
-
-    axios
-      .post("https://creekmore.io/api/auth", user)
-      .then((res) => {
-        // set the state of the user
-        this.user = res.data;
-
-        console.log(res);
-
-        // successful login
-        if (res.status === 200) {
-          // store the user in localStorage
-          localStorage.setItem("user", JSON.stringify(res.data)); // when retrieving, JSON.parse(res)
-          // const history = useHistory();
-        } else {
-          console.log("runs");
-          this.state.showAlert = true;
-        }
-      })
-      .catch((e) => {
-        console.log(e);
-        // this.state.showAlert = true;
-        this.setState({ showAlert: true });
-      });
-  };
-
-  toggleError() {
-    this.setState({ showAlert: !this.state.showAlert });
   }
 
   render() {
@@ -209,6 +162,9 @@ class Login extends React.Component {
                             className="custom-control-input"
                             id=" customCheckLogin"
                             type="checkbox"
+                            onChange={({ target }) =>
+                              this.setState({ checked: target.checked })
+                            }
                           />
                           <label
                             className="custom-control-label"
@@ -229,6 +185,7 @@ class Login extends React.Component {
                           <LoginButton
                             email={this.state.email}
                             password={this.state.password}
+                            checked={this.state.checked}
                           />
                         </div>
                       </Form>

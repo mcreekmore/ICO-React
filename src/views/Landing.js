@@ -58,8 +58,8 @@ class Landing extends React.Component {
         <main ref="main">
           <div className="position-relative">
             {/* shape Hero */}
-            <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 shape-default">
+            <section className="section section-lg section-shaped bg-gradient-dark pb-250 pt-200">
+              <div className="shape shape-style-2 shape-default">
                 <span />
                 <span />
                 <span />
@@ -72,13 +72,8 @@ class Landing extends React.Component {
               </div>
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
-                  <span>&nbsp;&nbsp;</span>
-                  <Row>
-                    <span>&nbsp;&nbsp;</span>
-                  </Row>
                   <Row>
                     <Col lg="6">
-                      <span>&nbsp;&nbsp;</span>
                       <Row>
                         <img
                           alt="..."
@@ -279,7 +274,7 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
-          <section className="section section-lg">
+          <section className="section section-lg ">
             <Container>
               <Row className="row-grid align-items-center">
                 <Col className="order-md-2" md="6">
@@ -423,7 +418,7 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
-          <section className="section pb-0 bg-gradient-warning">
+          <section className="section pb-0 bg-gradient-dark">
             <Container>
               <Row className="row-grid align-items-center">
                 <Col className="order-lg-2 ml-lg-auto" md="6">

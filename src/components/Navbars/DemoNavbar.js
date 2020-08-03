@@ -20,7 +20,7 @@ import { Link } from "react-router-dom";
 // JavaScript plugin that hides or shows a component based on your scroll
 import Headroom from "headroom.js";
 import isLogin from "../../utils/isLogin";
-import NavBarDropdown from "./NavBarDropdown";
+import NavBarDynamic from "./NavBarDynamic";
 // reactstrap components
 import {
   // Button,
@@ -32,13 +32,13 @@ import {
   Media,
   NavbarBrand,
   Navbar,
-  NavItem,
-  NavLink,
+  // NavItem,
+  // NavLink,
   Nav,
   Container,
   Row,
   Col,
-  UncontrolledTooltip,
+  // UncontrolledTooltip,
 } from "reactstrap";
 
 class DemoNavbar extends React.Component {
@@ -176,115 +176,7 @@ class DemoNavbar extends React.Component {
                     </DropdownMenu>
                   </UncontrolledDropdown>
                 </Nav>
-                <Nav
-                  className="navbar-nav-hover align-items-lg-center ml-lg-auto"
-                  navbar
-                >
-                  {" "}
-                  <UncontrolledDropdown nav>
-                    <DropdownToggle nav>
-                      <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Navigation</span>
-                    </DropdownToggle>
-
-                    {/* dynamic navigations */}
-                    <NavBarDropdown isLoggedIn={this.state.isLoggedIn} />
-
-                    {/* <DropdownMenu>
-                      <DropdownItem to="/landing" tag={Link}>
-                        Landing
-                      </DropdownItem>
-                      <DropdownItem to="/profile" tag={Link}>
-                        Profile
-                      </DropdownItem>
-                      <DropdownItem to="/login" tag={Link}>
-                        Login
-                      </DropdownItem>
-                      <DropdownItem to="/register" tag={Link}>
-                        Register
-                      </DropdownItem>
-                    </DropdownMenu> */}
-                  </UncontrolledDropdown>
-                  {/* <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href="https://www.facebook.com/creativetim"
-                      id="tooltip333589074"
-                      target="_blank"
-                    >
-                      <i className="fa fa-facebook-square" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Facebook
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip333589074">
-                      Like us on Facebook
-                    </UncontrolledTooltip>
-                  </NavItem> */}
-                  <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href="https://www.instagram.com/matthewcreekmore/"
-                      id="tooltip356693867"
-                      target="_blank"
-                    >
-                      <i className="fa fa-instagram" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Instagram
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip356693867">
-                      Follow us on Instagram
-                    </UncontrolledTooltip>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href="https://www.linkedin.com/in/creekmore/"
-                      id="tooltip184698705"
-                      target="_blank"
-                    >
-                      <i className="fa fa-twitter-square" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        LinkedIn
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip184698705">
-                      Connect on LinkedIn
-                    </UncontrolledTooltip>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href="https://github.com/mcreekmore"
-                      id="tooltip112445449"
-                      target="_blank"
-                    >
-                      <i className="fa fa-github" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Github
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip112445449">
-                      Star us on Github
-                    </UncontrolledTooltip>
-                  </NavItem>
-                  {/* <NavItem className="d-none d-lg-block ml-lg-4">
-                    <Button
-                      className="btn-neutral btn-icon"
-                      color="default"
-                      href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-navbar"
-                      target="_blank"
-                    >
-                      <span className="btn-inner--icon">
-                        <i className="fa fa-cloud-download mr-2" />
-                      </span>
-                      <span className="nav-link-inner--text ml-1">
-                        Download
-                      </span>
-                    </Button>
-                  </NavItem> */}
-                </Nav>
+                <NavBarDynamic isLoggedIn={this.state.isLoggedIn} />
               </UncontrolledCollapse>
             </Container>
           </Navbar>

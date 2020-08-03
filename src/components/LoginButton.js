@@ -18,7 +18,8 @@ const LoginButton = (props) => {
     e.preventDefault();
     // console.log(props.email);
     const user = { email: props.email, password: props.password };
-    console.log(user);
+    // console.log(user);
+    console.log(props.checked);
     // send the email and password to the server
     // const response = await axios.post("https://creekmore.io/api/auth", user);
 
@@ -28,21 +29,27 @@ const LoginButton = (props) => {
         // set the state of the user
         // this.user = res.data;
 
-        console.log(res);
+        // console.log(res);
 
         // successful login
         if (res.status === 200) {
-          // store the user in localStorage
-          localStorage.setItem("authData", JSON.stringify(res.data)); // when retrieving, JSON.parse(res)
+          if (props.checked) {
+            // store the user in localStorage
+            localStorage.setItem("authData", JSON.stringify(res.data));
+          } else {
+            window.sessionStorage.setItem("authData", JSON.stringify(res.data));
+          }
+
+          // when retrieving, JSON.parse(res)
           history.push("/");
           // const history = useHistory();
         } else {
-          console.log("runs");
+          // console.log("runs");
           toggleError();
         }
       })
       .catch((e) => {
-        console.log(e);
+        // console.log(e);
         // this.state.showAlert = true;
         toggleError();
       });
